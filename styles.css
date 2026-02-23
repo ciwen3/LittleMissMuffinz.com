@@ -1,161 +1,98 @@
-/* Reset default margins and paddings */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  background: #fefefe;
+}
 
+/* NAVBAR */
 .navbar {
-  background-color: white;
   display: flex;
   align-items: center;
   width: 100%;
-  font-family: 'Times New Roman';
-  font-variant: small-caps;
-  font-size: 1.3vw;
+  background: rgba(255,255,255,0.95);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 16px;
 }
 
+/* LOGO */
+.site-logo {
+  height: 60px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+/* NAV LINKS */
 .left-nav {
   display: flex;
 }
 
 .right-nav {
   display: flex;
-  margin-left: auto;        /* pushes links as far right as possible */
-  flex-wrap: nowrap;        /* keep links on one line */
+  margin-left: auto;
+  flex-wrap: wrap;
 }
 
 .right-nav a {
-  margin-left: 20px;        /* spacing between links */
-  white-space: nowrap;      /* keep link text on one line */
+  margin-left: 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
-.navbar a:hover {
+.right-nav a:hover {
   background: gray;
   color: white;
+  padding: 4px 6px;
+  border-radius: 4px;
 }
 
-
-
-
+/* HERO IMAGE */
 .hero {
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
 }
 
 .hero img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills and crops */
-  object-position: center 0%; /* focus point */
+  height: auto;
+  object-fit: cover;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .hero img {
-    object-position: center 0% ;
-  }
+/* SECTIONS */
+section {
+  padding: 40px 20px;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .hero img {
-    object-position: center 0%;
-  }
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-
-
-@font-face {
-  font-family: 'MyFont';
-  src: url('../fonts/MyFont-Regular.woff2') format('woff2'),
-       url('../fonts/MyFont-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap; /* improves performance */
+h2 {
+  font-size: 1.2rem;
+  margin: 5px 0;
 }
 
-@font-face {
-  font-family: 'MyFont';
-  src: url('../fonts/MyFont-Bold.woff2') format('woff2'),
-       url('../fonts/MyFont-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+p {
+  max-width: 900px;
+  line-height: 1.6;
 }
 
-
-
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  animation: subtleShift 5s infinite alternate;
-}
-
-/* changes the background color
-@keyframes mymove {
-  from { background-color: red; }
-  to { background-color: blue; }
-}
-*/
-
-/* Neutral (barely visible) 
-@keyframes subtleShift {
-  from { background-color: #ffffff; } 
-  to   { background-color: #f8faff; }  
-}
-*/
-
-/* Warm tone
-@keyframes subtleShift {
-  from { background-color: #ffffff; } 
-  to   { background-color: #fffaf3; } 
-}
-*/
-
-/* Slight “breathing” */
-@keyframes subtleShift {
-  from { background-color: #fefefe; }  
-  to   { background-color: #f9fbff; } 
-}
-
-
-/* Modern cool tone
-@keyframes subtleShift {
-  from { background-color: #f9f9ff; }  
-  to   { background-color: #f4f8ff; }  
-}
-*/
-
-
-/*If you want even softer variation without obvious color change:
-
-body {
-  background: linear-gradient(180deg, #ffffff, #fafbff);
-  background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite alternate;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-
-That creates a barely noticeable, moving light gradient — like a gentle “light shimmer.”
-*/
-
-
-
-
-
-
-/* Container for the 3 columns */
+/* PROJECT CARDS */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -163,265 +100,78 @@ That creates a barely noticeable, moving light gradient — like a gentle “lig
   justify-content: center;
 }
 
-/* Individual card (box) */
 .card {
-  background-color: white;
+  background: white;
   border: 2px solid black;
-  border-radius: 4px;
-  flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+  border-radius: 6px;
+  flex: 1 1 300px;
   max-width: 32%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 10px;
 }
 
-/* Image inside the card */
 .card img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-}
-
-/* Summary text */
-.card p {
-  margin-top: 10px;
-  text-align: center;
-  color: #333;
-}
-
-/* Responsive fallback for small screens */
-@media (max-width: 900px) {
-  .card {
-    max-width: 48%;
-  }
-}
-
-@media (max-width: 600px) {
-  .card {
-    max-width: 100%;
-  }
-}
-
-
-
-
-
-
-
-
-/* Modal Container */
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
   width: 100%;
-  height: 100%;
-  overflow: auto; 
-  background-color: rgba(0,0,0,0.7);
+  border-radius: 6px;
 }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 1rem;
-  border-radius: 8px;
-  width: 80%;
-  max-width: 700px;
-  position: relative;
-}
-
-/* Close Button */
-.close {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-video {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-.openVideoBtn {
-  background: linear-gradient(45deg, #48c6ef, #6f86d6);
-  box-shadow: 0 0 20px rgba(111, 134, 214, 0.3);
-  color: white;
-  border: none;
-  padding: 15px 40px;
-  font-size: 18px;
-  border-radius: 50px;
-  cursor: pointer;
-  animation: float 3s ease-in-out infinite, glow 2s alternate infinite;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.openVideoBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(111, 134, 214, 0.6);
-}
-
-.openVideoBtn:active {
-  transform: translateY(0);
-  box-shadow: 0 0 15px rgba(111, 134, 214, 0.3);
-}
-
-
-
-/*
-1. Soft Aqua Gradient (Calming)
-  background: linear-gradient(45deg, #66d9e8, #3b82f6);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-Gentle cyan-to-blue blend
-Still modern, but much easier on the eyes
-
-🌅 2. Warm Blue Gradient (Balanced & Professional)
-  background: linear-gradient(45deg, #5dade2, #2e86de);
-  box-shadow: 0 0 20px rgba(46, 134, 222, 0.4);
-Cooler tone without the piercing neon edge
-Works great on both light and dark backgrounds
-
-🌿 3. Teal-to-Green Gradient (Soft Energy)
-  background: linear-gradient(45deg, #48c6ef, #6f86d6);
-  box-shadow: 0 0 20px rgba(111, 134, 214, 0.3);
-More natural hues
-Still glows, but feels organic and less artificial
-
-⚪ 4. Minimalist White Glow (Subtle UI Feel)
-If your background is dark:
-  background: linear-gradient(45deg, #f5f7fa, #c3cfe2);
-  color: #222;
-  box-shadow: 0 0 20px rgba(195, 207, 226, 0.4);
-Looks “premium” and calm
-Great for professional dashboards or landing pages
-*/
-
-/* Floating animation 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}*/
-
-/* Glowing animation 
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px rgba(0, 200, 255, 0.5),
-                0 0 20px rgba(0, 200, 255, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 25px rgba(0, 200, 255, 1),
-                0 0 50px rgba(0, 200, 255, 0.8);
-  }
-}
-
-/* Optional hover effect 
-button2:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 1),
-              0 0 60px rgba(0, 255, 255, 0.8);
-}
-*/
-
-
-/*
-
-🧘‍♀️ Eye-Friendly Version
-If you want the same glowing feeling without eye strain, tone down the saturation and opacity a bit.
-Here’s a calmer version you can drop right in:
-
-/* Soft glowing animation */
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 8px rgba(102, 217, 232, 0.3),
-                0 0 16px rgba(102, 217, 232, 0.2);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(102, 217, 232, 0.6),
-                0 0 40px rgba(102, 217, 232, 0.4);
-  }
-}
-
-
-/* Gentle hover effect */
-button2:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(102, 217, 232, 0.5),
-              0 0 50px rgba(102, 217, 232, 0.4);
-}
-/*
-🔍 Why It’s Better
-Uses rgba(102, 217, 232) — a softer aqua, less saturated than pure cyan.
-Reduces opacity (0.3–0.6 instead of 0.8–1).
-Keeps the glow smooth, but now it feels more natural — like ambient light rather than neon.
-
-🎨 Optional Variants
-You can shift the glow color for different moods:
-Mood  Color RGB Value Notes
-Calm / Soft Blue  rgba(102, 217, 232, …)  Gentle aqua 
-Balanced Cool rgba(93, 173, 226, …) Muted medium blue 
-Warm Glow rgba(255, 200, 150, …)  Friendly orange-white tone  
-Neutral White Glow  rgba(230, 230, 255, …)  Very subtle, minimal glow 
-
-*/
-
-
-
-
-
-
+/* GRID INFO */
 .responsive-grid {
   display: grid;
-  /* 3 columns on large screens, but shrink automatically */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 15px;
-  padding: 15px;
-}
-
-.responsive-grid > div {
-  background-color: #f0f0f0;
+  gap: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
 }
 
+.responsive-grid section {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+}
 
-
+/* FOOTER SOCIAL ICONS */
 .footer {
-  display: block;
-  max-width: 10;
-  height: auto;
-  position: relative;
-  bottom: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .footer img {
-  max-width: 7.5rem;
-  padding: .5rem;
-  align-items: center;
-  justify-content: space-between;
+  width: 70px;
+}
+
+/* RESPONSIVE NAVBAR */
+@media (max-width: 1024px) {
+  .site-logo { height: 50px; }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .right-nav {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .right-nav a {
+    font-size: 14px;
+    margin: 5px 8px;
+  }
+
+  .site-logo {
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-logo {
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
 }

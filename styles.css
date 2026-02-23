@@ -286,6 +286,7 @@ button2:hover {
 }
 
 
+/* GRID INFO */
 .responsive-grid {
   display: grid;
   /* 3 columns on large screens, but shrink automatically */
@@ -301,7 +302,7 @@ button2:hover {
 }
 
 
-
+/* FOOTER SOCIAL ICONS */
 .footer {
   display: block;
   max-width: 10;
@@ -317,17 +318,16 @@ button2:hover {
   justify-content: space-between;
 }
 
-.site-logo {
-  height: 60px;        /* desktop size */
-  width: auto;
-  max-width: 180px;    /* prevents giant logo */
-  object-fit: contain;
-}
 
-/* Tablet */
-@media (max-width: 1024px) {
+
+
+@media (max-width: 480px) {
   .site-logo {
-    height: 50px;
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
   }
 }
 
@@ -338,10 +338,18 @@ button2:hover {
   }
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .site-logo {
+    height: 50px;
+  }
+}
+
 /* Mobile Navbar Fix */
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
+    text-align: center;
     padding: 10px;
   }
 

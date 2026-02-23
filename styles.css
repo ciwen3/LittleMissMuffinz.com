@@ -83,7 +83,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover; /* fills and crops */
-  object-position: center 0%; /* focus point */
+  object-position: 50% 50%; /* focus point */
 }
 
 

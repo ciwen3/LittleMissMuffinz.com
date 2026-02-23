@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("projectsContainer");
 
   const cardFiles = [
+    "./cards/CutestKids.html",
+    "./cards/FashionWeek2025.html",
+    "./cards/IceSkating.html",
     "./cards/RobFlemingPark.html",
     "./cards/CourtneyPhotography.html",
     "./cards/Intro.html"
